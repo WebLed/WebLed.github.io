@@ -1,5 +1,30 @@
 @import "import/heder.scss";
 
-.container {
-  max-width: 1140px;
+header {
+  width: 100%;
+  position: fixed;
+}
+.heder-top {
+  justify-content: space-between;
+  padding: 10px;
+  color: #ffffff;
+}
+.logo-box {
+}
+.logo {
+  font-size: 34px;
+  font-weight: 800;
+}
+.top-menu {
+  width: 70%;
+  justify-content: space-between;
+}
+
+.main {
+  background-image: url(../img/satom2.jpg);
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.main_promo {
 }
