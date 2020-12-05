@@ -38,3 +38,5 @@ body { font-family: "Montserrat", sans-serif; font-size: 14px; line-height: 21px
 img { width: 100%; min-height: 100%; }
 
 .container { max-width: 1140px; margin-right: auto; margin-left: auto; }
+
+.buttons { font-weight: 500; color: #000; background-color: #ffffff; border: 2px solid #6287ff; border-radius: 50px; -webkit-box-shadow: 0 0 10px rgba(0, 60, 255, 0.8); box-shadow: 0 0 10px rgba(0, 60, 255, 0.8); padding: 10px 15px; margin: 30px; }
