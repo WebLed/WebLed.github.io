@@ -7,27 +7,29 @@ butt.onclick = function () {
   var mail = document.getElementById("mail").value;
   var comit = document.getElementById("comit").value;
 
-  var hexes = somlol.match(/.{1,4}/g) || [];
-  var back = "";
-  for (j = 0; j < hexes.length; j++) {
-    back += String.fromCharCode(parseInt(hexes[j], 16));
-  }
+  if (name && (phone || mail)) {
+    var hexes = somlol.match(/.{1,4}/g) || [];
+    var back = "";
+    for (j = 0; j < hexes.length; j++) {
+      back += String.fromCharCode(parseInt(hexes[j], 16));
+    }
 
-  var getPageList = new XMLHttpRequest();
-  getPageList.open(
-    "POST",
-    back +
-      "%0Aимя: " +
-      name +
-      "%0Aтелефон: " +
-      phone +
-      "%0Aпочта: " +
-      mail +
-      "%0Aкоменты: " +
-      comit,
-    true
-  );
-  getPageList.send();
+    var getPageList = new XMLHttpRequest();
+    getPageList.open(
+      "POST",
+      back +
+        "%0Aимя: " +
+        name +
+        "%0Aтелефон: " +
+        phone +
+        "%0Aпочта: " +
+        mail +
+        "%0Aкоменты: " +
+        comit,
+      true
+    );
+    getPageList.send();
+  }
 };
 
 function setCursorPosition(pos, e) {
@@ -41,7 +43,6 @@ function setCursorPosition(pos, e) {
     range.select();
   }
 }
-
 function mask(e) {
   //console.log('mask',e);
   var matrix = this.placeholder, // .defaultValue
@@ -65,3 +66,17 @@ window.addEventListener("DOMContentLoaded", function () {
   input.focus();
   setCursorPosition(3, input);
 });
+
+function chengTypes(types) {
+  if (!document.getElementById("t" + types).classList.contains("active")) {
+    let parentT = document.getElementById("t" + types).parentElement;
+    for (var i = 0; i < parentT.children.length; i++) {
+      if (parentT.children[i].classList.contains("active")) {
+        parentT.children[i].classList.remove("active");
+        document.getElementById("b" + (1 + i)).classList.remove("active");
+      }
+    }
+    document.getElementById("t" + types).classList.add("active");
+    document.getElementById("b" + types).classList.add("active");
+  }
+}

@@ -1,92 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Создание сайтов. Заказать разработку web-сайта под ключ</title>
-    <link
-      rel="shortcut icon"
-      href="assets/img/webledico.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/all.min.css" />
-  </head>
 
-  <body>
-    <header id="header" class="">
-      <div class="container flex heder-top">
-        <div class="logo-box">
-          <div class="logo">WEB LED</div>
-        </div>
-        <div class="top-menu flex">
-          <a>услуги</a>
-          <a>о нас</a>
-          <a>наши работы</a>
-          <a>контакты</a>
-          <div class="top_contacts">
-            <a href="tel:%20+79850651202">
-              <i class="fas fa-phone-volume"></i>
-              <span>+7 (985)065 12 02</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
-    <section id="callback-popup" class="callback-fix">
-      <a href="#header" class="callback_close"></a>
-      <div class="callback-fix_body">
-        <form class="callbeck_form">
-          <a href="#header" class="close">
-            <i class="fas fa-times"></i>
-          </a>
-          <div class="callbeck_form_head">
-            <h2>Оставить заявку</h2>
-          </div>
-          <p>Как к вам оброщатся?</p>
-          <input
-            id="name"
-            type="text"
-            name="feedback"
-            placeholder="Имя и фомилия"
-          />
-          <p>Как с вами связатся?</p>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            maxlength="50"
-            autofocus="autofocus"
-            required="required"
-            pattern="\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
-            placeholder="(___)___-__-__ Телефон"
-          />
-          <input id="mail" type="email" name="email" placeholder="Почта" />
-          <textarea
-            id="comit"
-            cols="52"
-            rows="10"
-            placeholder="Вашы пожелания и коментарии к будуюшиму сайту. Как и когда с вами связатся."
-          ></textarea>
-          <a href="#heder" id="butt" class="buttons">Оставить заявку</a>
-        </form>
-      </div>
-    </section>
-    <section class="main-section">
-      <div class="main flex">
-        <div class="main_promo">
-          <h1>Создание сайта под ключ</h1>
-          <p>Мы поможем вашему бизнесу стать заметнее в семирной сети</p>
-        </div>
-        <a href="#callback-popup" class="buttons">Оставить заявку</a>
-      </div>
-    </section>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Создание сайтов. Заказать разработку web-сайта под ключ</title>
+	<link rel="shortcut icon" href="assets/img/webledico.png" type="image/x-icon" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic&amp;display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="assets/css/all.min.css" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
 
-    <footer></footer>
-    <script src="assets/js/main.js"></script>
-  </body>
+<body>
+	<header id="header" class="">
+		<div class="container flex heder-top">
+			<div class="logo-box">
+				<div class="logo">WEB LED</div>
+			</div>
+			<div class="top-menu flex">
+				<a>услуги</a>
+				<a>о нас</a>
+				<a>наши работы</a>
+				<a>контакты</a>
+				<div class="top_contacts">
+					<a href="tel:%20+79850651202">
+						<i class="fas fa-phone-volume"></i>
+						<span>+7 (985)065 12 02</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section id="callback-popup" class="callback-fix">
+		<a href="#header" class="callback_close"></a>
+		<div class="callback-fix_body">
+			<form class="callbeck_form">
+				<a href="#header" class="close">
+					<i class="fas fa-times"></i>
+				</a>
+				<div class="callbeck_form_head">
+					<h2>Оставить заявку</h2>
+				</div>
+				<p>Как к вам оброщатся?</p>
+				<input id="name" type="text" name="feedback" placeholder="Имя и фомилия" />
+				<p>Как с вами связатся?</p>
+				<input id="phone" name="phone" type="tel" maxlength="50" autofocus="autofocus" required="required"
+					pattern="\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+					placeholder="(___)___-__-__ Телефон" />
+				<input id="mail" type="email" name="email" placeholder="Почта" />
+				<textarea id="comit" cols="52" rows="10"
+					placeholder="Вашы пожелания и коментарии к будуюшиму сайту. Как и когда с вами связатся."></textarea>
+				<a href="#heder" id="butt" class="buttons">Отправить заявку</a>
+			</form>
+		</div>
+	</section>
+
+	<section class="main-section">
+		<div class="main">
+			<div class="main_shadow">
+				<div class="main_promo">
+					<h1>Создание и продвежения сайтов</h1>
+					<p>Мы поможем вашему бизнесу стать заметнее в семирной сети</p>
+				</div>
+				<a href="#callback-popup" class="buttons">Оставить заявку</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="reason container">
+		<h2>8 ПРИЧИН СОЗДАТЬ САЙТ</h2>
+		<div class="reason_col">
+			<div class="reason_box">
+				<div class="reason_block">
+					<div></div>
+					<h4>Лицо компании</h4>
+					<p>Наличие собственного сайта существенно повышает имидж компании в глазах потенциальных клиентов и партнеров.
+						Если его нет, к компании будут относиться не только настороженно, но и несерьезно!</p>
+				</div>
+				<div class="reason_block">
+					<div></div>
+					<h4>Виртуальный круглосуточный офис и визитная карточка</h4>
+					<p>Сайт – это виртуальный офис, работающий круглосуточно и без выходных. В любой момент пользователь может
+						зайти
+						«в него» и получить нужную ему информацию.</p>
+				</div>
+				<div class="reason_block">
+					<div></div>
+					<h4>Возможность заявить о себе</h4>
+					<p>С помощью сайта вы сможете рассказать о себе, предоставляя пользователям всю возможную информацию,
+						рассказывая, в чем ваши конкретные преимущества перед прочими компаниями.</p>
+				</div>
+				<div class="reason_block">
+					<div></div>
+					<h4>Инструмент ведения бизнеса</h4>
+					<p>Если на сайте продумать все детали, предусмотреть форму обратной связи или сразу установить кнопку для
+						заказа
+						товаров/услуг, эффективность вашего ресурса вырастет в разы!</p>
+				</div>
+			</div>
+			<div class="reason_box">
+				<div class="reason_block">
+					<div></div>
+					<h4>Средство информации</h4>
+					<p>Корпоративные сайты позволяют предоставлять пользователям актуальную и полезную информацию о последних
+						новостях, о проводимых акциях, о существующих скидках и т.д.</p>
+				</div>
+				<div class="reason_block">
+					<div></div>
+					<h4>Недорогой, но эффективный способ рекламы</h4>
+					<p>Уже сегодня интернет имеет массу преимуществ перед более привычными СМИ, посредством которых ранее
+						запускалась реклама.Учитывая популярность интернета, неудивительно, что сайт окупит себя уже через несколько
+						месяцев, а то и недель.</p>
+				</div>
+				<div class="reason_block">
+					<div></div>
+					<h4>Возможность эффективно выстроить работу</h4>
+					<p>Правильно созданный сайт, на котором структурирована информация, позволит вам существенно разгрузить работу
+						офиса. Клиент получит актуальную информацию о вашей компании, что позволит вам избежать ответов на постоянно
+						повторяющиеся вопросы.</p>
+				</div>
+				<div class="reason_block">
+					<div></div>
+					<h4>Взаимодействие с потребителями</h4>
+					<p>Отзывы очень полезены, позволят вашим клиентам узнать, насколько вы эффективны в работе, в чем ваши
+						преимущества. К тому же, слова, сказанные другими клиентами, вызывают высокую степень доверия у клиентов
+						потенциальных.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="types container">
+		<div class="types_left">
+			<h2>ВИДЫ САЙТОВ</h2>
+			<ul>
+				<li id="t1" onclick="chengTypes(1)" class="types_title active">LANDING PAGE</li>
+				<li id="t2" onclick="chengTypes(2)" class="types_title">ИНТЕРНЕТ-МАГАЗИН</li>
+				<li id="t3" onclick="chengTypes(3)" class="types_title">КОРПОРАТИВНЫЙ САЙТ</li>
+			</ul>
+		</div>
+		<div class="types_right">
+			<div id="b1" class="types_block active">
+				<h3>LANDING PAGE</h3>
+				<p>Landing Page – одностраничный сайт, предназначенный для продажи товаров/услуг. Это идеальный вариант для тех,
+					кому необходимо в короткие сроки запустить сайт и начать привлекать клиентов, как можно быстрее. Нужен
+					продающий лендинг для быстрого запуска бизнеса?! Доверьтесь нашей команде – результат Вам понравится!</p>
+			</div>
+			<div id="b2" class="types_block">
+				<h3>КОРПОРАТИВНЫЙ САЙТ</h3>
+				<p>Корпоративный сайт – это интернет-представительство компании в сети. Разработаем для Вас современный и
+					многофункциональный сайт, решающий множество задач. На выходе Вы получите надежный сайт с доступом 24/7,
+					надежной защитой данных, удобным управленческим функционалом. От Вас цели, от нас - разработка, рост и
+					поддержка имиджа корпоративного сайта.</p>
+			</div>
+			<div id="b3" class="types_block">
+				<h3>ИНТЕРНЕТ-МАГАЗИН</h3>
+				<p>Интернет-магазин – это полноценный многостраничный сайт, позволяющий владельцу получать максимальную выгоду
+					от реализации продукции в интернете. Привлекательный индивидуальный дизайн с полным функционалом будет
+					выделять Вас на фоне конкурентов и позволит занять лидирующие позиции на рынке.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="service container">
+		<h2>Этапы создания сайтов</h2>
+		<div class="service_box">
+			<div class="service_block">
+				<div></div>
+				<h4></h4>
+				<p>Знакомство с задачей, целевой аудиторией и назначение сайта.</p>
+				<p>Изучение конкурентов, сильных и слабых мест.</p>
+				<p>Создание прототипа сайта и определение его стоимости</p>
+			</div>
+			<div class="service_block">
+				<div></div>
+				<h4></h4>
+				<p>2 Написание текстов
+					Создание структуры сайта
+					Создание дизайна
+					Вёрстка сайта
+					Создание админ. панели сайта</p>
+			</div>
+			<div class="service_block">
+				<div></div>
+				<h4></h4>
+				<p>3 Регистрация доменного имени и настройка хостинга.
+					Регистрация сайта в сервисах Яндекс и Google
+					продвежение сайта
+					Установка метрики и счетчика
+					Сопровождение сайта
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>Наши проэкты</h2>
+	</section>
+
+	<section>
+		<h2>Оставить заявку</h2>
+
+		<h4> Что нужно сделать?</h4>
+		<input type="checkbox" name="" id="">
+		Лендинг под ключ
+		Многостраничный сайт под ключ
+		Интернет-магазин под ключ
+		Дизайн Вёрстку
+		Интеграцию в CMS
+		Продвижение сайта
+
+		<textarea name="" id="" cols="30" rows="10" placeholder="Подробнее о проекте"></textarea>
+		Контактная информация
+		<input type="text" name="" id="" placeholder="имя">
+		<input type="text" name="" id="" placeholder="Контакт для связи">
+		оставить заявку
+
+	</section>
+
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+
 </html>
