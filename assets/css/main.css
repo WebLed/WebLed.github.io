@@ -31,7 +31,7 @@ img { vertical-align: top; }
 h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: 400; }
 
 /*--------------------*/
-body { font-family: "Montserrat", sans-serif; font-size: 14px; line-height: 21px; height: 100%; }
+body { font-family: "Montserrat", sans-serif; font-size: 14px; line-height: 21px; height: 100%; background-color: #1a1b23; color: #ffff; }
 
 .flex { display: -webkit-box; display: -ms-flexbox; display: flex; }
 
@@ -40,6 +40,10 @@ img { width: 100%; min-height: 100%; }
 .container { max-width: 1140px; margin-right: auto; margin-left: auto; }
 
 .buttons { font-weight: 500; color: #000; background-color: #ffffff; border: 2px solid #6287ff; border-radius: 50px; -webkit-box-shadow: 0 0 10px rgba(0, 60, 255, 0.8); box-shadow: 0 0 10px rgba(0, 60, 255, 0.8); padding: 20px 50px; margin: 30px; }
+
+.border { border: gray 1px solid; }
+
+.reason_block, .service_block { background-color: #303343; }
 
 header { width: 100%; position: fixed; background: rgba(0, 0, 0, 0.8); }
 
@@ -83,9 +87,21 @@ header { width: 100%; position: fixed; background: rgba(0, 0, 0, 0.8); }
 
 h1 { font-size: 3.5rem; font-weight: 800; }
 
-.reason_col { display: -webkit-box; display: -ms-flexbox; display: flex; }
+.reason_header { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin: 100px 1px 30px 1px; }
+
+.reason h2 { font-size: 30px; font-weight: 600; }
+
+.reason_col { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
 .reason_box { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+
+.reason_box:last-child { margin-top: 30px; }
+
+.reason_icon { display: inline-block; width: 30px; height: 30px; margin: 10px 10px; }
+
+.reason_block { max-width: 500px; padding: 16px 10px; margin: 10px 10px; }
+
+.reason_block h4 { font-size: 20px; font-weight: 500; margin-bottom: 10px; }
 
 .types { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; margin-top: 100px; margin-bottom: 100px; }
 

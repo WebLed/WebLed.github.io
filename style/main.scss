@@ -1,5 +1,13 @@
 @import "import/heder.scss";
 
+%border {
+  border: gray 1px solid;
+}
+
+%block_color {
+  background-color: #303343;
+}
+
 header {
   width: 100%;
   position: fixed;
@@ -133,14 +141,43 @@ h1 {
   font-weight: 800;
 }
 .reason {
+  &_header {
+    display: flex;
+    justify-content: center;
+    margin: 100px 1px 30px 1px;
+  }
+  h2 {
+    font-size: 30px;
+    font-weight: 600;
+  }
   &_col {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   &_box {
     display: flex;
     flex-direction: column;
+    &:last-child {
+      margin-top: 30px;
+    }
+  }
+  &_icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 10px 10px;
   }
   &_block {
+    max-width: 500px;
+    padding: 16px 10px;
+    margin: 10px 10px;
+    @extend %block_color;
+    h4 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
   }
 }
 .types {
@@ -188,5 +225,6 @@ h1 {
     display: flex;
   }
   &_block {
+    @extend %block_color;
   }
 }
