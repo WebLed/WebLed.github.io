@@ -106,13 +106,9 @@ header { width: 100%; position: fixed; background: rgba(0, 0, 0, 0.8); }
 
 .reason_col { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
-.reason_box { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
-
-.reason_box:last-child { margin-top: 30px; }
-
 .reason_icon { display: inline-block; width: 30px; height: 30px; margin: 10px 10px; }
 
-.reason_block { max-width: 500px; padding: 16px 10px; margin: 10px 10px; }
+.reason_block { max-width: 393px; padding: 16px 10px; margin: 10px 10px; }
 
 .reason_block h4 { font-size: 20px; font-weight: 500; margin-bottom: 10px; }
 
