@@ -80,6 +80,37 @@ h6 {
 }
 /*--------------------*/
 body {
+  font-size: 15px;
+  line-height: 20px;
+}
+h1 {
+  font-size: 64px;
+  line-height: 80px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 39px;
+  line-height: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+h3 {
+  font-size: 24px;
+  line-height: 40px;
+  font-weight: 500;
+}
+h4 {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+}
+h5 {
+  font-size: 15px;
+  line-height: 20px;
+}
+/*--------------------*/
+body {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 21px;
@@ -95,7 +126,7 @@ img {
   min-height: 100%;
 }
 .container {
-  max-width: 1140px;
+  max-width: 1240px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -111,4 +142,7 @@ img {
 }
 .border {
   border: gray 1px solid;
+}
+.yellow {
+  color: #ffc25c;
 }
