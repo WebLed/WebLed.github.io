@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.head {
+			position: fixed;
+			background-color: rgba(0, 0, 0, 0.4);
+			height: 50px;
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="head">
+		<button onclick="speedDown *= 0.1">замедление</button>
+		<button onclick="speedDown *= 10">ускорение</button>
+	</div>
+	<div align="center" id="mandelbrotDiv"></div>
+	<script type="text/javascript">
+		function mandelbrotIteration(cx, cy, maxIter) {
+			let x = 0.0;
+			let y = 0.0;
+			let xx = 0;
+			let yy = 0;
+			let xy = 0;
+			let i = maxIter;
+			while (i-- && xx + yy <= 4) {
+				xy = x * y;
+				xx = x * x;
+				yy = y * y;
+				x = xx - yy + cx;
+				y = xy + xy + cy;
+			}
+			return maxIter - i;
+		}
+
+		function mandelbrot(canvas, xmin, xmax, ymin, ymax, iterations) {
+			let width = canvas.width;
+			let height = canvas.height;
+			let context = canvas.getContext('2d'); //создание блока в 2д формате
+			let image = context.getImageData(0, 0, width, height); //создание массива где 4 значения rgba опредиляют цвет пикселя
+			let pixels = image.data; //оброщение к одному из rgba цвету пикселя 
+
+			for (let ix = 0; ix < width; ++ix) {
+				for (let iy = 0; iy < height; ++iy) {
+
+					let x = xmin + (xmax - xmin) * ix / (width - 1);
+					let y = ymin + (ymax - ymin) * iy / (height - 1);
+					let i = mandelbrotIteration(x, y, iterations);
+					let pixels_position = 4 * (width * iy + ix);
+
+					//цевет текущего пикселя
+					if (i > iterations) {//при привышение итераций красим черный
+						pixels[pixels_position] = 0;
+						pixels[pixels_position + 1] = 0;
+						pixels[pixels_position + 2] = 0;
+					}
+					else {
+						let color = 3 * Math.log(i) / Math.log(iterations - 1.0);
+						if (color < 1) {
+							pixels[pixels_position] = 0;
+							pixels[pixels_position + 1] = 0;
+							pixels[pixels_position + 2] = 255 * color;
+						}
+						else if (color < 2) {
+							pixels[pixels_position] = 0;
+							pixels[pixels_position + 1] = 255 * (color - 1);
+							pixels[pixels_position + 2] = 255;
+						}
+						else {
+							pixels[pixels_position] = 255;
+							pixels[pixels_position + 1] = 255;
+							pixels[pixels_position + 2] = 255 * (color - 2);
+						}
+					}
+					pixels[pixels_position + 3] = 255; //прозрачность
+				}
+			}
+			context.putImageData(image, 0, 0);
+		}
+
+		let canvas = document.createElement('canvas');
+		const windowHeight = window.innerHeight;
+		canvas.width = windowHeight;
+		canvas.height = windowHeight;
+
+		let node = document.getElementById('mandelbrotDiv');
+		node.appendChild(canvas);
+
+		var canvasXMin = -2, canvasXMax = 2, canvasYMin = -2, canvasYMax = 2;
+		mandelbrot(canvas, canvasXMin, canvasXMax, canvasYMin, canvasYMax, 100);
+
+		var speedDown = 1;
+
+		canvas.addEventListener('click', function (e) {
+
+			var canvasX = (-((windowHeight / 2) - (e.pageX - e.target.offsetLeft)) * 0.001) * speedDown;
+			var canvasY = (-((windowHeight / 2) - (e.pageY - e.target.offsetTop)) * 0.001) * speedDown;
+
+			console.log((canvasXMin += canvasX) + "  " + (canvasXMax += canvasX));
+			console.log((canvasYMin += canvasY) + "  " + (canvasYMax += canvasY));
+			var speedscale = 0.1 * speedDown;
+			mandelbrot(canvas, canvasXMin += speedscale, canvasXMax -= speedscale, canvasYMin += speedscale, canvasYMax -= speedscale, 100);
+		});
+	</script>
+</body>
+
+</html>

@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: 400; }
 /*--------------------*/
 body { font-size: 15px; line-height: 20px; }
 
-h1 { font-size: 64px; line-height: 80px; font-weight: 800; text-transform: uppercase; }
+h1 { font-size: 56px; line-height: 80px; font-weight: 800; text-transform: uppercase; }
 
 h2 { font-size: 39px; line-height: 40px; font-weight: 600; text-transform: uppercase; }
 
@@ -54,6 +54,6 @@ img { width: 100%; min-height: 100%; }
 
 .buttons { font-weight: 500; color: #000; background-color: #ffffff; border: 2px solid #6287ff; border-radius: 50px; -webkit-box-shadow: 0 0 10px rgba(0, 60, 255, 0.8); box-shadow: 0 0 10px rgba(0, 60, 255, 0.8); padding: 20px 50px; margin: 30px; }
 
-.border { border: gray 1px solid; }
+input, textarea { border-radius: 3px; }
 
-.yellow { color: #ffc25c; }
+.error-input { position: absolute; visibility: hidden; opacity: 0; }

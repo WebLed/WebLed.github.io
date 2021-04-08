@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: 400; }
 /*--------------------*/
 body { font-size: 15px; line-height: 20px; }
 
-h1 { font-size: 64px; line-height: 80px; font-weight: 800; text-transform: uppercase; }
+h1 { font-size: 56px; line-height: 80px; font-weight: 800; text-transform: uppercase; }
 
 h2 { font-size: 39px; line-height: 40px; font-weight: 600; text-transform: uppercase; }
 
@@ -54,11 +54,9 @@ img { width: 100%; min-height: 100%; }
 
 .buttons { font-weight: 500; color: #000; background-color: #ffffff; border: 2px solid #6287ff; border-radius: 50px; -webkit-box-shadow: 0 0 10px rgba(0, 60, 255, 0.8); box-shadow: 0 0 10px rgba(0, 60, 255, 0.8); padding: 20px 50px; margin: 30px; }
 
-.border { border: gray 1px solid; }
+input, textarea { border-radius: 3px; }
 
-.yellow { color: #ffc25c; }
-
-.reason_block, .service_block { background-color: #303343; }
+.reason_block, .service_block, .order_cb-option span { background-color: #303343; }
 
 header { width: 100%; position: fixed; background: rgba(0, 0, 0, 0.8); }
 
@@ -108,7 +106,7 @@ header { width: 100%; position: fixed; background: rgba(0, 0, 0, 0.8); }
 
 .reason_icon { display: inline-block; width: 30px; height: 30px; margin: 10px 10px; }
 
-.reason_block { max-width: 393px; padding: 16px 10px; margin: 10px 10px; }
+.reason_block { max-width: 393px; padding: 16px 10px; margin: 10px 10px; border-radius: 3px; }
 
 .reason_block h4 { font-size: 20px; font-weight: 500; margin-bottom: 10px; }
 
@@ -128,12 +126,50 @@ header { width: 100%; position: fixed; background: rgba(0, 0, 0, 0.8); }
 
 .service { margin-top: 100px; }
 
-.service h2 { text-align: center; margin-bottom: 30px; }
+.service h2 { text-align: center; margin-bottom: 40px; }
 
 .service_box { display: -webkit-box; display: -ms-flexbox; display: flex; }
 
-.service_block { margin: 10px 10px; padding: 15px 17px; width: 30%; }
+.service_block { margin: 10px 10px; padding: 15px 17px; width: 30%; border-radius: 3px; }
 
 .service_block h4 { font-size: 20px; font-weight: 500; margin: 30px 0 15px 0; }
 
 .service_logo { border-radius: 50px; padding: 23px; background-color: #1a1b23; width: 90px; height: 90px; margin: 7px auto; }
+
+.order { margin-top: 100px; padding-bottom: 100px; }
+
+.order h2 { text-align: center; margin-bottom: 50px; }
+
+.order h4 { font-size: 1.375rem; font-weight: 600; margin: 0 0 20px; }
+
+.order_box { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin-bottom: 20px; }
+
+.order_box .order_block:first-child { -ms-flex-preferred-size: 70%; flex-basis: 70%; }
+
+.order_cb-option { position: relative; margin-bottom: 16px; margin-right: 5px; display: inline-block; }
+
+.order_cb-option input { position: absolute; visibility: hidden; opacity: 0; }
+
+.order_cb-option input:checked ~ span { color: #1a1a1a; background-color: #ffaf29; }
+
+.order_cb-option span { cursor: pointer; padding: 10px; -webkit-transition: background-color 0.35s, -webkit-transform 0.35s; transition: background-color 0.35s, -webkit-transform 0.35s; transition: background-color 0.35s, transform 0.35s; transition: background-color 0.35s, transform 0.35s, -webkit-transform 0.35s; display: inline-block; border-radius: 3px; }
+
+.order_contact h4 { font-size: 1.375rem; font-weight: 600; margin: 0 0 20px; }
+
+.order_contact_block { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+.order_contact_block input { height: 100%; margin-right: 20px; border-radius: 3px; }
+
+.order_contact_block button { background-color: #ffc25c; color: #252734; -webkit-box-shadow: 0px 10px 20px rgba(255, 194, 92, 0.4); box-shadow: 0px 10px 20px rgba(255, 194, 92, 0.4); font-weight: bold; padding: 12px 24px; -webkit-transition: 0.3s all; transition: 0.3s all; display: inline-block; cursor: pointer; border-radius: 3px; border: none; text-decoration: none; }
+
+.order_contact_block button.active { background-color: #28ff14; color: #252734; -webkit-box-shadow: 0px 10px 20px rgba(40, 255, 20, 0.4); box-shadow: 0px 10px 20px rgba(40, 255, 20, 0.4); }
+
+.order .error-input { position: absolute; visibility: hidden; opacity: 0; background-color: #ffffff; color: #000; border-radius: 8px; -webkit-transition: 0.3s all; transition: 0.3s all; }
+
+.order .error-input img { width: 20px; height: 20px; margin: 10px; vertical-align: middle; }
+
+.order .error-input span { margin-right: 10px; }
+
+.order .error-input:before { border: 20px solid transparent; border-bottom-color: white; position: absolute; bottom: 100%; left: 20px; content: ""; }
+
+.order .error-input.active { visibility: visible; opacity: 100; -webkit-transform: translatey(21px); transform: translatey(21px); }
