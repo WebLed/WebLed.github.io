@@ -25,8 +25,10 @@
 
 <body>
 	<div class="head">
-		<button onclick="speedDown *= 0.1">замедление</button>
-		<button onclick="speedDown *= 10">ускорение</button>
+		<button onclick="speedDown *= 0.1;">замедление</button>
+		<button onclick="speedDown *= 10;">ускорение</button>
+		<button onclick="focusing += 10;">фокусировка</button>
+		<button onclick="focusing -= 10;">РАСфокусировка</button>
 	</div>
 	<div align="center" id="mandelbrotDiv"></div>
 	<script type="text/javascript">
@@ -64,26 +66,26 @@
 
 					//цевет текущего пикселя
 					if (i > iterations) {//при привышение итераций красим черный
-						pixels[pixels_position] = 0;
-						pixels[pixels_position + 1] = 0;
-						pixels[pixels_position + 2] = 0;
+						pixels[pixels_position] = 255;
+						pixels[pixels_position + 1] = 255;
+						pixels[pixels_position + 2] = 255;
 					}
 					else {
 						let color = 3 * Math.log(i) / Math.log(iterations - 1.0);
 						if (color < 1) {
 							pixels[pixels_position] = 0;
 							pixels[pixels_position + 1] = 0;
-							pixels[pixels_position + 2] = 255 * color;
+							pixels[pixels_position + 2] = 10 * color;
 						}
 						else if (color < 2) {
 							pixels[pixels_position] = 0;
-							pixels[pixels_position + 1] = 255 * (color - 1);
-							pixels[pixels_position + 2] = 255;
+							pixels[pixels_position + 1] = 100 * (color - 1);
+							pixels[pixels_position + 2] = 0;
 						}
 						else {
-							pixels[pixels_position] = 255;
-							pixels[pixels_position + 1] = 255;
-							pixels[pixels_position + 2] = 255 * (color - 2);
+							pixels[pixels_position] = 0;
+							pixels[pixels_position + 1] = 0;
+							pixels[pixels_position + 2] = 100 * (color - 2);
 						}
 					}
 					pixels[pixels_position + 3] = 255; //прозрачность
@@ -104,18 +106,19 @@
 		mandelbrot(canvas, canvasXMin, canvasXMax, canvasYMin, canvasYMax, 100);
 
 		var speedDown = 1;
-
+		let focusing = 50
 		canvas.addEventListener('click', function (e) {
 
-			var canvasX = (-((windowHeight / 2) - (e.pageX - e.target.offsetLeft)) * 0.001) * speedDown;
-			var canvasY = (-((windowHeight / 2) - (e.pageY - e.target.offsetTop)) * 0.001) * speedDown;
+			let canvasX = (-((windowHeight / 2) - (e.pageX - e.target.offsetLeft)) * 0.001) * speedDown;
+			let canvasY = (-((windowHeight / 2) - (e.pageY - e.target.offsetTop)) * 0.001) * speedDown;
 
 			canvasXMin += canvasX;
 			canvasXMax += canvasX;
 			canvasYMin += canvasY;
 			canvasYMax += canvasY;
-			var speedscale = 0.1 * speedDown;
-			mandelbrot(canvas, canvasXMin += speedscale, canvasXMax -= speedscale, canvasYMin += speedscale, canvasYMax -= speedscale, 100);
+			let speedscale = 0.1 * speedDown;
+
+			mandelbrot(canvas, canvasXMin += speedscale, canvasXMax -= speedscale, canvasYMin += speedscale, canvasYMax -= speedscale, focusing);
 		});
 	</script>
 </body>
