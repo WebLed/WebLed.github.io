@@ -110,8 +110,10 @@
 			var canvasX = (-((windowHeight / 2) - (e.pageX - e.target.offsetLeft)) * 0.001) * speedDown;
 			var canvasY = (-((windowHeight / 2) - (e.pageY - e.target.offsetTop)) * 0.001) * speedDown;
 
-			console.log((canvasXMin += canvasX) + "  " + (canvasXMax += canvasX));
-			console.log((canvasYMin += canvasY) + "  " + (canvasYMax += canvasY));
+			canvasXMin += canvasX;
+			canvasXMax += canvasX;
+			canvasYMin += canvasY;
+			canvasYMax += canvasY;
 			var speedscale = 0.1 * speedDown;
 			mandelbrot(canvas, canvasXMin += speedscale, canvasXMax -= speedscale, canvasYMin += speedscale, canvasYMax -= speedscale, 100);
 		});
